@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
@@ -37,10 +39,16 @@ export default function ArtistView() {
             </div>
         )
     })
+    const renderArtistName=() => {
+        return artistData.length ? 
+            <h2>{ artistData[0].artistName }</h2>
+            :
+            <h2>loading...</h2>
+    }
 
     return (
         <div>
-            { artistData.length ? <h2>{ artistData[0]?.artistName}</h2> : <h2>loading...</h2> }
+            { renderArtistName() }
             { navButtons() }
             { renderAlbums }
         </div>

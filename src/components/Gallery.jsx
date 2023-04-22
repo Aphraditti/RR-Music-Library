@@ -1,3 +1,5 @@
+import React from 'react';
+
 import GalleryItem from "./GalleryItem"
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
